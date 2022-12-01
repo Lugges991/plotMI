@@ -14,7 +14,7 @@ class PlotMI:
     def __init__(self, img):
         # Create a container
         self.img = img.copy()
-        self.max = img.shape[-1]
+        self.max = img.shape[-1]-1
         self.master = tk.Tk()
         frame = tk.Frame(self.master)
         self. index = img.shape[-1]//2
@@ -51,7 +51,6 @@ class PlotMI:
         self.axs[1].imshow(self.img[:, self.index, :])
         self.axs[2].imshow(self.img[self.index, :, :])
         self.canvas.draw()
-        print(self.index)
 
     def __call__(self, ):
         self.master.mainloop()
